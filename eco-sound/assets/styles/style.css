@@ -1,0 +1,236 @@
+@font-face {
+    font-family: 'Inter';
+    src: url("../fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 20px;
+    color: #ffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    min-width: 620px;
+    height: 80px;
+    background-color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 100px;
+}
+
+@media screen and (max-width: 900px) {
+    .header {
+        padding: 20px 20px;
+        justify-content: center;
+        font-size: 15px;
+    }
+}
+
+.header_logo {
+    height: 50px;
+    width: 50px;
+    background: url(/assets/svg/logo.svg);
+    transition: .3s;
+}
+
+.header_logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
+}
+
+.nav {
+    margin-left: auto;
+}
+
+.nav_ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav_ul_li {
+    padding-right: 30px;
+}
+
+.nav_ul_li_link {
+    text-decoration: none;
+    color: #ffff;
+    transition: .5s;
+    text-decoration: none;
+}
+
+.nav_ul_li_link:hover {
+    background-color: #ffff;
+    color: #080808;
+    padding: 24px 10px;
+}
+
+.nav_ul_li_link.active {
+    color: #BDAE82;
+}
+
+.main {
+    min-width: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(/assets/img/forest.jpg);
+    height: 100%;
+}
+
+.main_audio-player {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    padding: 10px 10px 30px 10px;
+}
+
+.main_button_play {
+    background: url(../svg/play.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    width: 150px;
+    height: 150px;
+}
+
+.main_button_play.active {
+    background-image: url(../svg/pause.svg);
+}
+
+.main_button_play:hover,
+.main_button_right:hover,
+.main_button_left:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+    cursor: pointer;
+    width: 170px;
+    height: 170px;
+    transition: .3s;
+}
+
+.main_button_right:active,
+.main_button_left:active {
+    width: 150px;
+    height: 150px;
+}
+
+.main_button_left {
+    background: url(../svg/angle-circle-left.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    width: 150px;
+    height: 150px;
+}
+
+.main_button_right {
+    background: url(../svg/angle-circle-right.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    width: 150px;
+    height: 150px;
+}
+
+@media screen and (max-width: 940px) {
+    .main_button_right,
+    .main_button_left,
+    .main_button_play {
+        width: 50px;
+        height: 50px;
+    }
+    .main_button_right:active,
+    .main_button_left:active {
+        width: 80px;
+        height: 80px;
+    }
+    .main_button_play:hover,
+    .main_button_right:hover,
+    .main_button_left:hover {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+.time {
+    display: flex;
+    font-family: 'Press Start 2P';
+    color: #000;
+    font-size: 30px;
+    border: solid;
+    border-radius: 80px;
+    background-color: #BDAE82;
+    opacity: .6;
+}
+
+.current,
+.length {
+    padding: 20px;
+}
+
+.divider {
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 940px) {
+    .time {
+        font-size: 20px;
+    }
+}
+
+.footer {
+    min-width: 620px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    font-size: 20px;
+    background-color: #000;
+}
+
+.footer-container {
+    margin-right: 20px;
+}
+
+.footer_logo {
+    width: 100px;
+    height: 50px;
+    transition: .3s;
+}
+
+.footer_logo:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.footer_container_link {
+    text-decoration: none;
+    color: #ffff;
+    margin-left: 20px;
+    transition: .5s;
+}
+
+.footer_container_link:hover {
+    color: #BDAE82;
+}
+
+@media screen and (max-width: 345px) {
+    .footer {
+        justify-content: center;
+    }
+}
