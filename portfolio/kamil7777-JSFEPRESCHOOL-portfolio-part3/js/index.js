@@ -1,9 +1,9 @@
 import i18Obj from './translate.js'
 
 let lang = 'en';
+const body = document.querySelector('.body');
 
 function themeChange() {
-    const body = document.querySelector('.body');
     if (body.classList.contains('light')) {
         return 'light'
     } else {
@@ -11,7 +11,7 @@ function themeChange() {
     }
 
 }
-let theme = themeChange();
+let theme;
 
 
 /*  при нажатии на бугер иконку появляется крест */
@@ -59,8 +59,10 @@ const portfolioImages = document.querySelectorAll('.section_img_item');
 
 function changeImage(event) {
     if (event.target.classList.contains('section_buttons_portfolio')) {
-        const value = event.target.dataset.season
-        portfolioImages.forEach((img, index) => img.src = `./assets/img/${value}/${index + 1}.jpg`)
+        const value = event.target.dataset.season;
+        portfolioImages.forEach((img, index) => img.src = `./assets/img/${value}/${index + 1}.jpg`);
+        document.querySelectorAll('.section_buttons_portfolio').forEach((item) => item.classList.remove('active'));
+        event.target.classList.add('active');
     }
 }
 portfolioBtns.addEventListener('click', changeImage);
@@ -81,27 +83,31 @@ preloadImages()
 
 /* Переключение светлой и тёмной темы */
 
-const switchTheme = () => {
-    const sunBtn = document.querySelector('.wrapper_icon-sun');
-    const allСhangeElm = document.querySelectorAll('.body, .main, .section_title, .wrapper_section_title_skills, .wrapper_section_title, .section_skills_item__title, .section_skills_item__text, .section_buttons_portfolio, .wrapper_section_title_bg_portfolio, .section_price_card__title, .section_price_card_text');
-    sunBtn.addEventListener('click', function() {
+const allСhangeElm = document.querySelectorAll('.body, .main, .section_title, .wrapper_section_title_skills, .wrapper_section_title, .section_skills_item__title, .section_skills_item__text, .section_buttons_portfolio, .wrapper_section_title_bg_portfolio, .section_price_card__title, .section_price_card_text');
+const sunBtn = document.querySelector('.wrapper_icon-sun');
+sunBtn.addEventListener('click', () => {
+    if (body.classList.contains('light')) {
         allСhangeElm.forEach(item => {
-            item.classList.toggle('light');
+            item.classList.remove('light');
         })
-    });
-}
-switchTheme()
-
+        theme = 'dark'
+    } else {
+        allСhangeElm.forEach(item => {
+            item.classList.add('light');
+        })
+        theme = 'light'
+    }
+});
 
 /* Переключение язык оформления */
-
-
 
 const langRu = document.querySelector('.change-lang-ru');
 const langEn = document.querySelector('.change-lang-en');
 
 function getTranslateRu() {
     lang = 'ru';
+    langRu.classList.add('active');
+    langEn.classList.remove('active');
     const text = document.querySelectorAll('[data-lang]');
     text.forEach((item) => {
         const value = item.dataset.lang;
@@ -118,6 +124,8 @@ langRu.addEventListener('click', getTranslateRu);
 
 function getTranslateEn() {
     lang = 'en';
+    langEn.classList.add('active');
+    langRu.classList.remove('active');
     const text = document.querySelectorAll('[data-lang]');
     text.forEach((item) => {
         const value = item.dataset.lang;
@@ -144,9 +152,9 @@ function getLocalStorage() {
         getTranslateRu();
     }
     if (localStorage.getItem('theme') == 'light') {
-        switchTheme();
+        allСhangeElm.forEach(item => {
+            item.classList.add('light');
+        })
     }
 }
 window.addEventListener('load', getLocalStorage)
-
-console.log('Ваша отметка - 77.5 балла(ов)\nОтзыв по пунктам ТЗ: \n Не выполненные / не засчитанные пункты: \n 1. сложные эффекты для кнопок при наведении и  клике \n Частично выполненные пункты: \n 1. выбранный пользователем язык отображения страницы и светлая или тёмная тема сохраняются при перезагрузке страницы— 2.5 балла\n Все оставшиеся пункты выполнены и не имеют комментариев проверяющего.\n ')

@@ -277,6 +277,11 @@ span {
     margin-right: 30px;
 }
 
+.change-lang-ru.active,
+.change-lang-en.active {
+    color: #BDAE82;
+}
+
 @media screen and (max-width: 808px) {
     .nav {
         display: none;
@@ -686,6 +691,11 @@ h1 {
 .section_buttons_portfolio.light {
     color: #000;
     background: #FFFFFF;
+}
+
+.section_buttons_portfolio.active {
+    background: #BDAE82;
+    color: #FFFFFF;
 }
 
 .section_buttons_portfolio:focus,
