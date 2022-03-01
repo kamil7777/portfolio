@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/favicon.ico">
+    <link rel="stylesheet" href="./assets/styles/normalize.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Eco Sounds</title>
+</head>
+
+<body>
+
+    <header class="header">
+
+        <img src="./assets/svg/logo.svg" class="header_logo" alt="logotype">
+        <nav class="nav">
+            <ul class="nav_ul">
+                <li class="nav_ul_li"><a href="#" class="nav_ul_li_link" data-bird="solovey">Соловей</a></li>
+                <li class="nav_ul_li"><a href="#" class="nav_ul_li_link" data-bird="drozd">Дрозд</a></li>
+                <li class="nav_ul_li"><a href="#" class="nav_ul_li_link" data-bird="zarynka">Малиновка</a></li>
+                <li class="nav_ul_li"><a href="#" class="nav_ul_li_link" data-bird="javoronok">Жаворонок</a></li>
+                <li class="nav_ul_li"><a href="#" class="nav_ul_li_link" data-bird="slavka">Славка</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main class="main">
+        <div class="main_audio-player">
+            <button class="main_button_left" aria-label="toggle on previous"></button>
+            <button class="main_button_play" aria-label="play audio"></button>
+            <button class="main_button_right" aria-label="toggle on next"></button>
+            <audio class="audio-player" src="./assets/audio/drozd.mp3"></audio>
+        </div>
+        <div class="time">
+            <div class="current">0:00</div>
+            <div class="divider">/</div>
+            <div class="length"></div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer_container">
+            <span class="footer_container_info">&copy;</span>
+            <span class="footer_container_info">2022</span>
+            <a class="footer_container_link" href="https://github.com/kamil7777" target="_blank">github</a>
+        </div>
+        <a href="https://rs.school/js/" target="_blank"><img src="./assets/svg/rss.svg" class="footer_logo" alt="logo_rs_school"></a>
+    </footer>
+
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
