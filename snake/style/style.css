@@ -1,0 +1,254 @@
+* {
+    font-family: 'Press Start 2P', cursive;
+    color: rgb(252, 250, 250);
+}
+
+body {
+    height: 100%;
+    margin: 20px;
+    align-items: flex-start;
+}
+
+
+/*Задаем глобальные параметры*/
+
+body {
+    background: rgb(102, 87, 87);
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.title-text {
+    font-size: 80px;
+    text-shadow: 10px 10px 20px #4caf50;
+}
+
+.wrapper {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    margin-bottom: 70px;
+}
+
+.container-all {
+    margin: 0 auto;
+    max-width: 830px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: solid #4caf50;
+}
+
+.total_result.active {
+    transition: all .5s ease;
+    transform: translateX(0);
+}
+
+.total_result {
+    position: absolute;
+    top: 0;
+    width: 350px;
+    height: 280px;
+    background-color: rgb(255, 249, 255);
+    transition: all .5s ease;
+    transform: translateX(101%);
+    padding: 20px 0 0 50px;
+    overflow-y: scroll;
+}
+
+.total_text {
+    color: #4caf50;
+    font-size: 14px;
+    text-shadow: 0px 0px 10px #4caf50;
+}
+
+.loadName {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+
+/*Делаем границу вокруг игрового поля*/
+
+canvas {
+    border: solid #4caf50;
+}
+
+.play-button {
+    background-color: #4caf50;
+    font-size: 16px;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    color: rgb(102, 87, 87);
+    transform: scale(.98);
+}
+
+.members {
+    background-color: #4caf50;
+    font-size: 14px;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.members:hover {
+    color: rgb(102, 87, 87);
+    transform: scale(.98);
+}
+
+.remove_btn {
+    width: 300px;
+    background-color: #4caf50;
+    font-size: 12px;
+    padding: 2px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.remove_btn:hover {
+    color: rgb(102, 87, 87);
+    transform: scale(.98);
+}
+
+.record_text {
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 0px 0px 10px #000;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: .3;
+    }
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.score {
+    border: 10px;
+    font-family: 'Press Start 2P', cursive;
+    color: orangered;
+}
+
+.text_name {
+    background-color: transparent;
+    border: solid #4caf50;
+    border-radius: 20px;
+    height: 30px;
+    text-align: center;
+}
+
+.reset {
+    display: none;
+    position: absolute;
+    left: 250px;
+    top: 3px;
+    background-image: url(../img/cross_icon.svg);
+    background-color: transparent;
+    height: 30px;
+    width: 30px;
+    border: 0;
+}
+
+.reset:hover {
+    cursor: pointer;
+    ;
+}
+
+.reset:active {
+    transform: scale(0.9);
+}
+
+.voice {
+    background-image: url(../img/up_volume_icon.svg);
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 0 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+.voice:hover {
+    transform: scale(.96);
+}
+
+.voice:active {
+    transform: scale(0.9);
+}
+
+.voice.mute {
+    background-image: url(../img/off_volume_icon.svg);
+}
+
+.wrapper-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footer {
+    min-width: 620px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    font-size: 20px;
+    background-color: rgb(102, 78, 78);
+    color: white;
+}
+
+.footer-container {
+    margin-right: 20px;
+}
+
+.footer_logo {
+    width: 100px;
+    height: 50px;
+    transition: .3s;
+}
+
+.footer_logo:hover {
+    filter: invert(57%) sepia(31%) saturate(798%) hue-rotate(73deg) brightness(95%) contrast(91%);
+}
+
+.footer_container_link {
+    text-decoration: none;
+    color: #ffff;
+    margin-left: 20px;
+    transition: .5s;
+}
+
+.footer_container_link:hover {
+    color: #4caf50;
+}
