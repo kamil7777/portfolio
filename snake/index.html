@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Snake</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style\style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="container-all">
+        <div class="header">
+            <img src="./img/18072_animal_cobra_snake_icon.png" alt="snake" class="imgsnake">
+            <h1 class="title-text">SNAKE</h1>
+        </div>
+        <div class="wrapper">
+            <canvas width="400" height="400" class="game"></canvas>
+            <div class="container">
+                <canvas width="400" height="300" class="score"></canvas>
+                <form class="loadName">
+                    <input type="text" placeholder="Enter your name" class="text_name" autofocus autocomplete>
+                    <button class="reset"></button>
+                </form>
+                <div class="wrapper-button">
+                    <button class="play-button">Play</button>
+                    <button class="voice"></button>
+                    <button class="members">Game<br>result</button>
+                </div>
+                <audio class="background_music" loop></audio>
+                <div class="total_result"></div>
+            </div>
+
+        </div>
+        <footer class="footer">
+            <div class="footer_container">
+                <span class="footer_container_info">&copy;</span>
+                <span class="footer_container_info">2022</span>
+                <a class="footer_container_link" href="https://github.com/kamil7777" target="_blank">github</a>
+            </div>
+            <a href="https://rs.school/js/" target="_blank"><img src="./img/rss.svg" class="footer_logo" alt="logo_rs_school"></a>
+        </footer>
+    </div>
+    <script type="text/javascript" src="script\script.js"></script>
+</body>
+
+</html>
