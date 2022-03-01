@@ -1,5 +1,5 @@
 const canvas = document.querySelector('.game');
-var context = canvas.getContext('2d');
+const context = canvas.getContext('2d');
 const textName = document.querySelector('.text_name');
 const reset = document.querySelector('.reset')
 const submit = document.querySelector('.submit');
@@ -8,10 +8,23 @@ const voice = document.querySelector('.voice');
 const cont = document.querySelector('.total_result');
 const btn = document.createElement('button');
 const text = document.createElement('h2');
-const audio = new Audio();
-audio.src = './audio/sound.mp3';
-const grid = 16; // Размер одной клеточки на поле — 16рх
+let audio = new Howl({
+    src: ['./audio/sound.mp3'],
+    loop: true,
+});
+let bonus = new Howl({
+    src: ['./audio/bonus.mp3'],
+});
+bonus.rate(4)
+let gameOver = new Howl({
+    src: ['./audio/game_over.mp3'],
+});
+
+
+
+// Размер одной клеточки на поле — 16рх
 let count = 0;
+const grid = 16;
 const snake = {
     x: 160,
     y: 160,
@@ -142,7 +155,8 @@ function loop() {
         context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
         // Если змейка добралась до яблока...
         if (cell.x === apple.x && cell.y === apple.y) {
-            // увеличиваем длину змейки
+            bonus.play()
+                // увеличиваем длину змейки
             snake.maxCells++;
             //увеличивем счетчик
             score++;
@@ -162,6 +176,7 @@ function loop() {
         // Проверяем, не столкнулась ли змея сама с собой
         // Для этого перебираем весь массив и смотрим, есть ли у нас в массиве змейки две клетки с одинаковыми координатами
         for (let i = index + 1; i < snake.cells.length; i++) {
+
             // Если такие клетки есть — начинаем игру заново
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
                 // Задаём стартовые параметры основным переменным
@@ -182,6 +197,7 @@ function loop() {
                     localStorage.setItem('members', JSON.stringify(obj))
 
                 }
+                gameOver.play()
                 alert('Lose, try again')
                     // Ставим еду в случайное место
                 apple.x = getRandomInt(0, 25) * grid;
@@ -240,6 +256,8 @@ textName.addEventListener('keypress', (event) => {
         audio.play();
         voice.classList.add('mute');
         resetBtn(event)
+            /* 
+             */
     }
 })
 
