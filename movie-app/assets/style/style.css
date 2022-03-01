@@ -34,6 +34,7 @@ body {
 }
 
 .reset {
+    display: none;
     background-image: url(../svg/cross-circle.svg);
     background-color: #373B69;
     width: 20px;

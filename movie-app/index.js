@@ -6,6 +6,7 @@ const searchMov =
 const main = document.querySelector('.main');
 const form = document.querySelector('.search-container_form');
 const search = document.querySelector('.input');
+const reset = document.querySelector('.reset');
 
 getData(url);
 
@@ -78,8 +79,23 @@ async function getData(url) {
             getData(searchMov + searchData);
         }
     });
-    //Перезагрузка страницы при очистки строки поиска
-    document.querySelector('.reset').addEventListener('click', () => {
-        document.location.reload()
+    //функция появления значка очистки поля ввода
+    search.addEventListener('input', () => {
+        if (search.value.length !== 0) {
+            reset.style.display = 'block';
+        } else {
+            reset.style.display = 'none';
+        }
+        reset.addEventListener('click', (event) => {
+            if (search.value.length !== 0) {
+                resetBtn(event)
+            }
+        })
     })
+
+}
+
+function resetBtn(event) {
+    search.value = '';
+    reset.style.display = 'none'
 }
