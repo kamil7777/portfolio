@@ -206,7 +206,7 @@ a:focus {
         height: 100vh;
         padding-top: 0;
         padding-left: 0;
-        transition: all 1s ease;
+        transition: 1s all;
         transform: translateX(101%);
     }
 }
@@ -215,7 +215,7 @@ a:focus {
     display: flex;
     top: 0;
     right: 0;
-    transition: all 1s ease;
+    transition: 1s all;
     transform: translateX(0);
 }
 
